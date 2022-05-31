@@ -1,0 +1,20 @@
+import pandas as pd
+
+data = pd.read_csv("startup_funding.csv")
+
+data_mapped = pd.DataFrame(
+    data=data,
+    index=data.index,
+    columns=['permalink',
+             'company_name',
+             'number_employees',
+             'category',
+             'city',
+             'state',
+             'funded_date',
+             'raised_amount',
+             'raised_currency',
+             'round'
+             ]
+)
+output = data_mapped.to_json('data_mapped')
